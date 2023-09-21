@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>FUN GAME </title>
+<h1> No. gussing game </h1>
+<p> Enter a no  from 1 to 10</p> <br>
+</head>
+<body>
+<label>Enter your guess </label>
+<input Id =" guessfield"><br>
+<input type="submit" Id ="submitbtn" value="submit">
+
+<script>
+
+const answer = Math.floor(Math.random()*10 +1);
+
+let guesses =0; 
+document.getElementById("sumbitbtn").onclick=function(){
+
+
+let guess = parseInt(document.getElementById("guessfield").value); 
+guesses +=1;
+
+if( guess==answer){
+alert( `${answer} is the no. and it took u ${gussses} guesses`)
+
+}
+else if ( guess> answer){
+alert ( " too small");
+
+}
+else {
+alert("too big ");
+}
+
+}
+
+</script>
+</body>
+</html>
