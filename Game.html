@@ -1,74 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> FUN GAME </title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-}
+    <title>FUN GAME</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
 
-#video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1; 
-     aspect-ratio: 10/30;
-}
-h1{
-    margin-top: 0px;
-    margin-left: 20px;
-}
-footer{
-    margin-top: 300px;
-}
+        #video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            aspect-ratio: 10/30;
+        }
 
-</style>
+        h1 {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Add media query for small screens (e.g., mobile devices) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            label {
+                font-size: 16px;
+            }
+
+            input {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <video autoplay muted loop id="video-bg">
         <source src="sample.mp4" type="video/mp4">
     </video>
   
-        <h1> No. Guessing game </h1><hr>
-        <h2> Enter a no  from 1 to 10</h2> 
-        <label>Enter your guess </label>
-        <input id="guessfield">
-        <input type="button" id="submitbtn" value="submit">
- 
-<script>
+    <h1>No. Guessing game</h1><hr>
+    <h2>Enter a number from 1 to 10</h2> 
+    <label>Enter your guess</label>
+    <input id="guessfield" type="number" min="1" max="10">
+    <input type="button" id="submitbtn" value="Submit">
 
-const answer = Math.floor(Math.random() * 10 +1);
-let guesses =0; 
+    <script>
+        const answer = Math.floor(Math.random() * 10 + 1);
+        let guesses = 0;
 
-document.getElementById("submitbtn").onclick=function()
-{
-let guess = parseInt(document.getElementById("guessfield").value); 
-guesses +=1;
+        document.getElementById("submitbtn").onclick = function () {
+            let guess = parseInt(document.getElementById("guessfield").value);
+            guesses += 1;
 
-if( guess==answer)
-{
-alert( `${answer} is the Number i was thinking off and It took you ${guesses} guesses`);
-}
-else if ( guess< answer)
-{
-alert ( " too small");
-}
-else 
-{
-alert("too big ");
-} };
+            if (guess == answer) {
+                alert(`${answer} is the number I was thinking of, and it took you ${guesses} guesses`);
+            } else if (guess < answer) {
+                alert("Too small");
+            } else {
+                alert("Too big");
+            }
+        };
+    </script>
 
-</script>
-
-<footer>  &copy; 2023 akhil raj soni Follow me on my- <a href="https://instagram.com/akhil_soni_4392?igshid=OGQ5ZDc2ODk2ZA==">Instagram </a>  All rights reserved.
-</footer>
+    <footer>&copy; 2023 akhil raj soni. Follow me on <a href="https://instagram.com/akhil_soni_4392?igshid=OGQ5ZDc2ODk2ZA==">Instagram</a>. All rights reserved.</footer>
 </body>
 </html>
