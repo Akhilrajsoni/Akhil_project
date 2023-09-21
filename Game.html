@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> FUN GAME </title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; 
+}
+h1{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+footer{
+    margin-top: 300px;
+}
+
+</style>
 </head>
 <body>
-  <h1> No. gussing game </h1>
-<h3> Enter a no  from 1 to 10</h3> 
-<label>Enter your guess </label>
-<input id="guessfield">
-<input type="button" id="submitbtn" value="submit">
-
+    <video autoplay muted loop id="video-bg">
+        <source src="sample.mp4" type="video/mp4">
+    </video>
+  
+        <h1> No. Guessing game </h1><hr>
+        <h2> Enter a no  from 1 to 10</h2> 
+        <label>Enter your guess </label>
+        <input id="guessfield">
+        <input type="button" id="submitbtn" value="submit">
+ 
 <script>
 
 const answer = Math.floor(Math.random() * 10 +1);
-
 let guesses =0; 
-document.getElementById("submitbtn").onclick=function(){
 
-
+document.getElementById("submitbtn").onclick=function()
+{
 let guess = parseInt(document.getElementById("guessfield").value); 
 guesses +=1;
 
-if( guess==answer){
-alert( `${answer} is the no. and it took u ${guesses} guesses`);
-
+if( guess==answer)
+{
+alert( `${answer} is the Number i was thinking off and It took you ${guesses} guesses`);
 }
-else if ( guess< answer){
+else if ( guess< answer)
+{
 alert ( " too small");
-
 }
-else {
+else 
+{
 alert("too big ");
-}
-
-};
+} };
 
 </script>
+
+<footer>  &copy; 2023 akhil raj soni <a href="https://instagram.com/akhil_soni_4392?igshid=OGQ5ZDc2ODk2ZA=="> <i class="fa-brands fa-instagram"></i> </a>  All rights reserved.
+</footer>
 </body>
 </html>
