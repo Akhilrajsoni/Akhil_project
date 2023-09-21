@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f0f0f0;
-            overflow: hidden; /* Hide horizontal scrollbar */
+            overflow: hidden;
         }
 
         video {
@@ -82,6 +82,24 @@
         <input id="guessfield" type="number" min="1" max="10">
         <input type="button" id="submitbtn" value="Submit">
     </div>
+
+    <script>
+        const answer = Math.floor(Math.random() * 10 + 1);
+        let guesses = 0;
+    
+        document.getElementById("submitbtn").onclick = function () {
+            let guess = parseInt(document.getElementById("guessfield").value);
+            guesses += 1;
+    
+            if (guess == answer) {
+                alert(`${answer} is the number I was thinking of, and it took you ${guesses} guesses`);
+            } else if (guess < answer) {
+                alert("Too small");
+            } else {
+                alert("Too big");
+            }
+        };
+    </script>
 
     <footer>&copy; 2023 akhil raj soni. Follow me on <a href="https://instagram.com/akhil_soni_4392?igshid=OGQ5ZDc2ODk2ZA==">Instagram</a>. All rights reserved.</footer>
 </body>
